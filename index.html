@@ -21,6 +21,9 @@
                 <h1>Zays<span class="closet">CLOSET</span></h1>
             </div>
             <nav class="nav">
+                <div class="mobile-menu-toggle">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
@@ -173,5 +176,24 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navUl = document.querySelector('.nav ul');
+            const navLinks = document.querySelectorAll('.nav a');
+
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenuToggle.classList.toggle('active');
+                navUl.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    navUl.classList.remove('active');
+                });
+            });
+        });
+    </script>
     </body>
 </html>
