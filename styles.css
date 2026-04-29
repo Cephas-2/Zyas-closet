@@ -463,10 +463,12 @@ body {
     }
     
     .nav ul {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
+        width: 100vw;
+        height: 100vh;
         background: white;
         flex-direction: column;
         padding: 1rem 0;
@@ -476,6 +478,8 @@ body {
         visibility: hidden;
         transition: all 0.3s ease;
         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        padding-top: 80px;
+        z-index: 999;
     }
     
     .nav ul.active {
